@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign-Up</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+        h1 {
+            text-align: center;
+            color: #333333;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        p {
+            text-align: center;
+            color: #666666;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #cccccc;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: #ff3d00;
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .password-strength {
+            color: #28a745;
+            font-size: 14px;
+            margin-top: 5px;
+            text-align: center;
+        }
+        .login {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666666;
+        }
+        .login a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .login a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form id="signupForm" action="signup.php" method="post">
+            <h1>Sign-Up</h1>
+            <p>Please fill up the following fields to register or create an account</p>
+            
+            <div class="form-group">
+                <input type="text" name="first_name" placeholder="First Name" required />
+            </div>
+            <div class="form-group">
+                <input type="text" name="last_name" placeholder="Last Name" required />
+            </div>
+            <div class="form-group">
+                <input type="email" name="email" placeholder="Email" required />
+            </div>
+            <div class="form-group">
+                <input type="password" id="password" name="password" placeholder="Password" required />
+            </div>
+            <div class="form-group">
+                <input type="password" id="confirmPassword" name="confirm_password" placeholder="Re-type Password" required />
+            </div>
+            <div id="passwordError" class="error-message"></div>
+            <div id="passwordStrength" class="password-strength"></div>
+            <button type="submit">Sign Up</button>
+            <div class="login">
+                <p>Already have an Account? <a href="login.html" id="loginLink">Login Here</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+</html>
